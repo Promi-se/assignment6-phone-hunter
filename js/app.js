@@ -56,3 +56,11 @@ const displaySearchResult = phones => {
     showErrorMessage('none');
     }
 }
+
+// load phone detail function
+const loadPhoneDetail = phoneId => {
+    const url = `https://openapi.programming-hero.com/api/phone/${phoneId}`;
+    fetch(url)
+    .then(res => res.json())
+    .then(data => displayPhoneDetail(data.data))
+}
